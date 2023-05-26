@@ -1,0 +1,237 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #0f0f0f;
+  font-family: "Neue Montreal", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.wrapper {
+  height: 100vh;
+}
+
+/*  wrapper  */
+
+.hero-image-wrapper {
+  position: relative;
+  flex: 2;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-image-wrapper .bg-image {
+  transform: rotate(-180deg);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-image-wrapper .front-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 400px;
+  z-index: 2;
+}
+
+.content-wrapper {
+  flex: 3;
+  background: #e4e4e4;
+  padding: 2em 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*  nav  */
+
+.content-wrapper nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.content-wrapper nav p {
+  color: #535353;
+}
+
+.content-wrapper nav a {
+  text-decoration: none;
+}
+
+.content-wrapper nav i {
+  font-size: 2em;
+}
+
+.content-wrapper nav button {
+  position: relative;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.content-wrapper nav button:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1.3px;
+  top: 27px;
+  background-color: #0f0f0f;
+  transition: transform 0.3s ease-in-out;
+}
+
+.content-wrapper nav button:hover:after {
+  transform: translateY(-2px);
+}
+
+/*  header  */
+
+header h1,
+header h2 {
+  font-family: "Gangsar", "Trebuchet MS", sans-serif;
+  letter-spacing: 0.4em;
+  margin: 0 0.2em 0;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+header h2 {
+  font-size: 2em;
+  color: #535353;
+}
+
+header h1 {
+  font-size: 4em;
+}
+
+/*  form wrapper  */
+
+.form-wrapper {
+  position: relative;
+  margin: 3em 0;
+  z-index: 2;
+}
+
+form {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  position: relative;
+}
+
+.form-wrapper input {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 1em;
+  font-size: 16px;
+  border-bottom: 2px solid #0f0f0f;
+  flex: 1;
+}
+
+.form-wrapper input::placeholder {
+  color: #0f0f0f;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.form-wrapper button {
+  position: relative;
+  border: solid 2px #0f0f0f;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #535353;
+  padding: 1.2em 3em;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.form-wrapper button::after {
+  position: absolute;
+  background: #ffffff;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  content: "";
+  top: 0;
+  left: 0;
+}
+
+.form-wrapper button::before {
+  background: #535353;
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(20deg);
+  width: 150%;
+  height: 0%;
+  transition: all 0.8s ease;
+}
+
+.form-wrapper button:hover {
+  color: #ffffff;
+}
+.form-wrapper button:hover::before {
+  height: 200%;
+}
+
+textarea {
+  width: 100%;
+  height: 60px;
+  overflow-y: scroll;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 1em;
+  font-size: 16px;
+  border-left: 2px solid #0f0f0f;
+  resize: none;
+}
+
+textarea::placeholder {
+  color: #0f0f0f;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+}
+.form-wrapper p {
+  padding: 2em 0;
+  width: 300px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #535353;
+  text-align: justify;
+}
+
+/*  footer  */
