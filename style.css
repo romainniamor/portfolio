@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "neue_montrealregular";
+  src: url("./assets/fonts/neuemontreal-regular-webfont.woff2") format("woff2"),
+    url(".assets/fonts/neuemontreal-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gangsarregular";
+  src: url("./assets/fonts/gangsar_regular-webfont.woff2") format("woff2"),
+    url("./assets/fonts/gangsar_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -10,7 +26,7 @@ body {
   height: 100vh;
   overflow: hidden;
   background: #0f0f0f;
-  font-family: "Neue Montreal", sans-serif;
+  font-family: "neue_montrealregular", sans-serif;
 }
 
 .container {
@@ -49,8 +65,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 500px;
   z-index: 2;
 }
 
@@ -69,7 +85,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  align-items: end;
+  font-size: 15px;
 }
 
 .content-wrapper nav p {
@@ -81,38 +98,38 @@ body {
 }
 
 .content-wrapper nav i {
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
-.content-wrapper nav button {
+.content-wrapper nav .close-button {
   position: relative;
-  border: none;
-  outline: none;
   background: none;
-  font-size: 14px;
   cursor: pointer;
+  text-decoration: none;
+  font-weight: 900;
+  color: #000000;
 }
 
-.content-wrapper nav button:after {
+.content-wrapper nav .close-button:after {
   position: absolute;
   content: "";
   display: block;
   width: 100%;
   height: 1.3px;
-  top: 27px;
+  top: 24px;
   background-color: #0f0f0f;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 
-.content-wrapper nav button:hover:after {
-  transform: translateY(-2px);
+.content-wrapper nav .close-button:hover:after {
+  transform: translateY(-7px);
 }
 
 /*  header  */
 
 header h1,
 header h2 {
-  font-family: "Gangsar", "Trebuchet MS", sans-serif;
+  font-family: "gangsarregular", sans-serif;
   letter-spacing: 0.4em;
   margin: 0 0.2em 0;
   text-transform: uppercase;
@@ -120,12 +137,12 @@ header h2 {
 }
 
 header h2 {
-  font-size: 2em;
+  font-size: 4em;
   color: #535353;
 }
 
 header h1 {
-  font-size: 4em;
+  font-size: 6em;
 }
 
 /*  form wrapper  */
@@ -134,6 +151,7 @@ header h1 {
   position: relative;
   margin: 3em 0;
   z-index: 2;
+  background: #e4e4e4;
 }
 
 form {
@@ -159,7 +177,8 @@ form {
   color: #0f0f0f;
   text-transform: uppercase;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
+  font-family: "neue_montrealregular", sans-serif;
 }
 
 .form-wrapper button {
@@ -223,15 +242,110 @@ textarea::placeholder {
   color: #0f0f0f;
   text-transform: uppercase;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
+  font-family: "neue_montrealregular", sans-serif;
 }
 .form-wrapper p {
   padding: 2em 0;
   width: 300px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   color: #535353;
   text-align: justify;
 }
 
-/*  footer  */
+/*  overlay animations  */
+
+header .h1,
+header .h2 {
+  position: relative;
+}
+
+header h1,
+header h2 {
+  position: relative;
+  top: 250px;
+}
+
+.header-revealer::after {
+  content: "";
+  position: absolute;
+  top: 120px;
+  left: 0px;
+  width: 800px;
+  height: 120px;
+
+  margin: 0 auto;
+  z-index: 0;
+}
+
+.hero-image-wrapper,
+.content-wrapper,
+.front-img {
+  overflow: clip;
+  clip-path: inset(0px 0 0 0);
+}
+
+/*  ___RESPONSIVES___  */
+
+@media screen and (max-width: 890px) {
+  header h1,
+  header h2 {
+    letter-spacing: 0.3em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .hero-image-wrapper .front-img {
+    width: 300px;
+    height: 400px;
+  }
+
+  .content-wrapper nav {
+    font-size: 14px;
+    margin-bottom: 3em;
+  }
+
+  header h2 {
+    font-size: 2.5em;
+  }
+
+  header h1 {
+    font-size: 4em;
+  }
+
+  .form-wrapper input {
+    font-size: 15px;
+  }
+
+  .form-wrapper input::placeholder {
+    font-size: 15px;
+  }
+
+  .form-wrapper button {
+    font-size: 13px;
+  }
+
+  textarea {
+    height: 50px;
+    font-size: 15px;
+  }
+
+  textarea::placeholder {
+    font-size: 15px;
+  }
+  .form-wrapper p {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  form {
+    width: 100%;
+  }
+}
