@@ -2,16 +2,16 @@
 
 @font-face {
   font-family: "neue_montrealregular";
-  src: url("./assets/fonts/neuemontreal-regular-webfont.woff2") format("woff2"),
-    url(".assets/fonts/neuemontreal-regular-webfont.woff") format("woff");
+  src: url("../assets/fonts/neuemontreal-regular-webfont.woff2") format("woff2"),
+    url("..assets/fonts/neuemontreal-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
-font-face {
+@font-face {
   font-family: "gangsarregular";
-  src: url("./assets/fonts/gangsar_regular-webfont.woff2") format("woff2"),
-    url("./assets/fonts/gangsar_regular-webfont.woff") format("woff");
+  src: url("../assets/fonts/gangsar_regular-webfont.woff2") format("woff2"),
+    url("../assets/fonts/gangsar_regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -93,7 +93,7 @@ nav {
   width: 100%;
   display: flex;
   font-size: 15px;
-  align-items: end;
+  align-items: flex-end;
 }
 
 /*  nav-links  */
@@ -127,20 +127,6 @@ nav {
 
 .content-wrapper .nav-bar-main {
   justify-content: right;
-}
-
-/*  nav bar contact page  */
-
-.content-wrapper .nav-bar-contact {
-  justify-content: space-between;
-}
-
-.content-wrapper .nav-bar-contact p {
-  color: var(--secondary);
-}
-
-.content-wrapper .nav-bar-contact i {
-  font-size: 1.5em;
 }
 
 /*  header  */

@@ -2,9 +2,9 @@
 
 gsap.from(
   ".hero-image-wrapper, .content-wrapper, .front-img, about-wrapper p",
-  2.2,
+  2,
   {
-    delay: 0.5,
+    delay: 0.2,
     clipPath: "inset(0 100% 0 0)",
     ease: "power4.inOut",
     stagger: {
@@ -16,7 +16,7 @@ gsap.from(
 // zoom out on img
 
 gsap.from("img", 2, {
-  delay: 1,
+  delay: 0.8,
   scale: 2,
   ease: "power4.inOut",
   stagger: {
@@ -27,7 +27,7 @@ gsap.from("img", 2, {
 // vert slide h1 & h2
 
 gsap.to("header h1, header h2", 1, {
-  delay: 1.5,
+  delay: 1.3,
   top: 0,
   ease: "power4.out",
   stagger: {
@@ -42,7 +42,7 @@ const ends = ["!", " :)", ""];
 
 // cursor flashing
 let cursor = gsap.to(".cursor", {
-  delay: 2.5,
+  delay: 2.3,
   opacity: 0,
   ease: "power3.inOut",
   duration: 1,

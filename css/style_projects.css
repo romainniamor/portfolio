@@ -1,0 +1,216 @@
+/*  variables   */
+
+@font-face {
+  font-family: "neue_montrealregular";
+  src: url("../assets/fonts/neuemontreal-regular-webfont.woff2") format("woff2"),
+    url("..assets/fonts/neuemontreal-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "gangsarregular";
+  src: url("../assets/fonts/gangsar_regular-webfont.woff2") format("woff2"),
+    url("../assets/fonts/gangsar_regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "quebectrial";
+  src: url("../assets/fonts/quebec-trial-webfont.woff2") format("woff2"),
+    url("../assets/fonts/quebec-trial-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ambrotyperegular";
+  src: url("../assets/fonts/ambrotype-webfont.woff2") format("woff2"),
+    url("../assets/fonts/ambrotype-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bg-color: #0f0f0f;
+  --primary: #e4e4e4;
+  --secondary: #535353;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  font-family: "neue_montrealregular", sans-serif;
+  color: var(--primary);
+}
+
+.wrapper-container {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75%;
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/*  nav bars  */
+
+.lateral-left-nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 15px;
+  color: var(--primary);
+  align-items: center;
+  padding-top: 3em;
+  z-index: 1;
+}
+
+.item {
+  transform: rotate(-90deg);
+  margin-bottom: 3em;
+}
+
+/*  nav-links  */
+
+.nav-link {
+  position: relative;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 400;
+  color: var(--primary);
+}
+
+.nav-link:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  top: 24px;
+  background-color: var(--primary);
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-link:hover::after {
+  transform: translateY(-7px);
+}
+
+/*  left col  */
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  min-width: 350px;
+  padding: 2em 3em;
+}
+
+/*  video   */
+
+.video-display {
+  width: 100%;
+  min-width: 350px;
+  background: linear-gradient(0deg, #1a1a1a 0%, var(--bg-color) 22%, #0c0c0c);
+}
+
+.video-display video {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/*  work box   */
+
+.about-work {
+  width: 80%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  position: relative;
+}
+
+.about-work h2 {
+  font-family: "gangsarregular";
+  font-size: 2em;
+  font-weight: lighter;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+}
+
+.about-work h2,
+.about-work p {
+  opacity: 0;
+}
+.about-work p {
+  font-size: 16px;
+  text-align: justify;
+  line-height: 1.7;
+  padding-top: 2em;
+}
+
+.about-work .github-link {
+  text-align: right;
+}
+
+.about-work a {
+  color: var(--primary);
+  text-decoration: none;
+  padding-top: 2em;
+}
+
+/*  right section   */
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+  overflow: scroll;
+  padding: 6em 3em;
+  gap: 2em;
+  justify-content: start;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: lighter;
+  opacity: 1;
+  filter: blur(50px);
+}
+
+.projects-list .project:hover .title {
+  transform: skewX(-10deg) translateX(20px);
+}
+
+.projects-list .title {
+  font-size: 5.5em;
+  transition: transform 0.3s ease;
+  font-family: "quebectrial";
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.projects-list .info {
+  font-family: Montserrat, sans-serif;
+  padding-left: 1.5em;
+}

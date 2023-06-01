@@ -6,26 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>projects</title>
     <link rel="stylesheet" href="./css/style_projects.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
   </head>
   <body>
+    <div class="wrapper-container"></div>
     <div class="container">
-      <div class="row row-1 border-bottom">
-        <div class="titles flex-center border-right">
-          <div class="header">
-            <h1>Projects</h1>
-            <h1>Skills</h1>
-          </div>
-        </div>
+      <nav class="lateral-left-nav">
+        <a class="nav-link item" href="contact.html">contact</a>
+        <a class="nav-link item" href="index.html">home</a>
+      </nav>
 
-        <div class="social-link flex-center">
-          <div class="contact">
-            <span
-              >Check my
-              <a href=""><i class="devicon-github-original colored"></i> </a>
-            </span>
-          </div>
+      <div class="left-section">
+        <div class="video-display">
+          <video class="video" src="" muted></video>
+        </div>
+        <div class="about-work">
+          <h2>work</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit minus
+            dolor placeat in fugit eum deleniti neque corporis quaerat.
+            Consequatur atque, ullam natus quibusdam molestias officia maiores
+            rerum. Ipsa, velit.
+            <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit minus
+            dolor placeat in fugit eum deleniti neque corporis.
+          </p>
+          <a class="github-link" href="">
+            Check my <i class="devicon-github-original"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="right-section projects-list">
+        <div class="project">
+          <h3 class="title">my garden</h3>
+          <p class="info">- html - css - js - python - django - postgresql</p>
+        </div>
+        <div class="project">
+          <h3 class="title">to do</h3>
+          <p class="info">- html - css - js - python - django - postgresql</p>
+        </div>
+        <div class="project">
+          <h3 class="title">planning</h3>
+          <p class="info">- html - css - bootstrap - vuejs</p>
         </div>
       </div>
     </div>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="./scripts/projects.js"></script>
 </html>
