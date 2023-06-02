@@ -92,8 +92,21 @@ body {
 nav {
   width: 100%;
   display: flex;
-  font-size: 15px;
+  font-size: 16px;
   align-items: flex-end;
+  position: relative;
+}
+
+nav::after {
+  content: "";
+  position: absolute;
+  right: 20%;
+  top: 50%;
+  transform: translate(-20% -50%);
+  width: 25%;
+  height: 1px;
+  background: var(--bg-color);
+  z-index: 5;
 }
 
 /*  nav-links  */
@@ -112,15 +125,16 @@ nav {
   position: absolute;
   content: "";
   display: block;
-  width: 100%;
+  width: 0%;
   height: 1px;
-  top: 24px;
+  top: 50%;
+
   background-color: var(--bg-color);
-  transition: transform 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
 
 .nav-link:hover:after {
-  transform: translateY(-7px);
+  width: 100%;
 }
 
 /*  nav bar main page  */

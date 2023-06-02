@@ -48,7 +48,7 @@ html,
 body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
   background-color: var(--bg-color);
   font-family: "neue_montrealregular", sans-serif;
   color: var(--primary);
@@ -68,19 +68,20 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
+  padding: 3em 2em;
 }
 
 /*  nav bars  */
 
 .lateral-left-nav {
+  position: relative;
   height: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--primary);
-  align-items: center;
-  padding-top: 3em;
   z-index: 1;
 }
 
@@ -89,10 +90,21 @@ body {
   margin-bottom: 3em;
 }
 
+.lateral-left-nav::after {
+  content: "";
+  position: relative;
+  top: 5%;
+  left: 50%;
+  transform: translate(-5% -50%);
+  width: 1px;
+  height: 25%;
+  background: var(--primary);
+  z-index: 5;
+}
+
 /*  nav-links  */
 
-.nav-link {
-  position: relative;
+.lateral-left-nav .nav-link {
   background: none;
   cursor: pointer;
   text-decoration: none;
@@ -100,19 +112,19 @@ body {
   color: var(--primary);
 }
 
-.nav-link:after {
+.lateral-left-nav .nav-link:after {
   position: absolute;
   content: "";
-  display: block;
-  width: 100%;
+  width: 0%;
   height: 1px;
-  top: 24px;
+  top: 50%;
+  left: 0;
   background-color: var(--primary);
-  transition: transform 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
 }
 
-.nav-link:hover::after {
-  transform: translateY(-7px);
+.lateral-left-nav .nav-link:hover:after {
+  width: 100%;
 }
 
 /*  left col  */
@@ -120,6 +132,7 @@ body {
 .left-section {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 50%;
   height: 100%;
   min-width: 350px;
@@ -132,6 +145,8 @@ body {
   width: 100%;
   min-width: 350px;
   background: linear-gradient(0deg, #1a1a1a 0%, var(--bg-color) 22%, #0c0c0c);
+  height: auto;
+  min-height: 220px;
 }
 
 .video-display video {
@@ -143,12 +158,13 @@ body {
 /*  work box   */
 
 .about-work {
-  width: 80%;
-  height: 50%;
+  width: 85%;
+  min-width: 450px;
   display: flex;
   flex-direction: column;
-  justify-content: end;
   position: relative;
+  background: red;
+  justify-content: end;
 }
 
 .about-work h2 {
@@ -172,12 +188,11 @@ body {
 
 .about-work .github-link {
   text-align: right;
-}
-
-.about-work a {
+  position: relative;
   color: var(--primary);
   text-decoration: none;
   padding-top: 2em;
+  font-size: 16px;
 }
 
 /*  right section   */
@@ -187,7 +202,7 @@ body {
   flex-direction: column;
   width: 50%;
   height: 100%;
-  overflow: scroll;
+
   padding: 6em 3em;
   gap: 2em;
   justify-content: start;
@@ -195,7 +210,7 @@ body {
   text-transform: uppercase;
   font-weight: lighter;
   opacity: 1;
-  filter: blur(50px);
+  filter: blur(10px);
 }
 
 .projects-list .project:hover .title {
@@ -213,4 +228,144 @@ body {
 .projects-list .info {
   font-family: Montserrat, sans-serif;
   padding-left: 1.5em;
+}
+
+/*  HEADER 404  */
+
+.header404 {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2em 6em;
+}
+
+.header404::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  height: 25%;
+  width: 100%;
+  background: var(--bg-color);
+}
+
+.header404 h1 {
+  font-size: 20em;
+  font-family: "gangsarregular";
+  letter-spacing: 10px;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+}
+
+.header404 h3 {
+  font-size: 2em;
+  font-family: "gangsarregular";
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.header404 .content {
+  background: var(--bg-color);
+  z-index: 2;
+  height: 20%;
+}
+
+/*  Responsive   */
+
+@media screen and (max-width: 1150px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* R nav bars  */
+
+  .lateral-left-nav {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: right;
+    padding: 0;
+    position: relative;
+  }
+
+  .item {
+    transform: rotate(0deg);
+    margin-bottom: 0em;
+    margin-left: 3em;
+  }
+
+  .lateral-left-nav::after {
+    content: "";
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translate(-20% -50%);
+    height: 1px;
+    width: 25%;
+  }
+
+  /* R left col  */
+
+  .left-section {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+    padding: 0;
+  }
+
+  /* R video   */
+
+  .video-display {
+    width: 100%;
+    min-width: 410px;
+    min-height: 300px;
+  }
+
+  .video-display video {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  /* R work box   */
+
+  .about-work {
+    width: 100%;
+    height: auto;
+  }
+
+  /* R right section   */
+
+  .projects-list {
+    width: 100%;
+    height: auto;
+    padding: 8em 2em;
+    gap: 2em;
+  }
+
+  .projects-list .title {
+    font-size: 4em;
+    transition: transform 0.3s ease;
+    font-family: "quebectrial";
+    cursor: pointer;
+    color: #ffffff;
+  }
+
+  .projects-list .info {
+    font-family: Montserrat, sans-serif;
+    padding-left: 1.5em;
+  }
+
+  .header404 {
+    padding: 0;
+  }
 }

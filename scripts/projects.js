@@ -9,16 +9,18 @@ gsap.to(".wrapper-container", 1, {
 gsap.to(".projects-list", {
   duration: 3,
   delay: 0.3,
-  filter: "blur(-20px)",
+  filter: "blur(-10px)",
   ease: "power4.out",
   y: -50,
 });
 
-gsap.to(".about-work h2, .about-work p, .about-work a", 1, {
+//about work vert
+
+gsap.to(".about-work h2, .about-work p", 1, {
   delay: 0.6,
   opacity: 1,
   ease: "power4.out",
-  y: -110,
+  y: -20,
   stagger: {
     amount: 0.25,
   },
@@ -44,4 +46,21 @@ projects.forEach((project) => {
 
     video.play();
   });
+});
+
+// header 404
+
+gsap.to(".header404 .content", {
+  duration: 1,
+  delay: 0.5,
+  ease: "power4.out",
+  y: -100,
+  onComplete: function () {
+    gsap.to(".header404 h1", {
+      duration: 1,
+      opacity: 1,
+      ease: "power4.out",
+      y: -110,
+    });
+  },
 });
