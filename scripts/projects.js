@@ -16,13 +16,14 @@ gsap.to(".projects-list", {
 
 //about work vert
 
-gsap.to(".about-work h2, .about-work p", 1, {
-  delay: 0.6,
+gsap.to(".about-work h2, .about-work p", 2, {
+  delay: 0.3,
   opacity: 1,
   ease: "power4.out",
-  y: -20,
+  opacity: 1,
+  y: -30,
   stagger: {
-    amount: 0.25,
+    amount: 0.5,
   },
 });
 
@@ -51,8 +52,8 @@ projects.forEach((project) => {
 // header 404
 
 gsap.to(".header404 .content", {
-  duration: 1,
-  delay: 0.5,
+  duration: 2,
+  delay: 0.3,
   ease: "power4.out",
   y: -100,
   onComplete: function () {
