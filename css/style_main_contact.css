@@ -32,7 +32,7 @@ html,
 body {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow: scroll;
   background-color: var(--bg-color);
   font-family: "neue_montrealregular", sans-serif;
 }
@@ -44,7 +44,7 @@ body {
 }
 
 .wrapper {
-  height: 100vh;
+  height: 100%;
 }
 
 /*  wrapper  */
@@ -100,7 +100,7 @@ nav {
 nav::after {
   content: "";
   position: absolute;
-  right: 20%;
+  left: 20%;
   top: 50%;
   transform: translate(-20% -50%);
   width: 25%;
@@ -167,7 +167,7 @@ header h1 {
 
 .form-wrapper {
   position: relative;
-  margin: 3em 0;
+  margin: 2em 0;
   z-index: 2;
   background: var(--primary);
 }
@@ -369,16 +369,23 @@ header h2 {
 
 /*  ___RESPONSIVES___  */
 
-@media screen and (max-width: 890px) {
+@media screen and (max-width: 1030px) {
   header h1,
   header h2 {
     letter-spacing: 0.3em;
   }
+
+  .about-wrapper {
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 800px) {
-  .container {
+  .container,
+  .content-wrapper {
+    display: flex;
     flex-direction: column;
+    justify-content: space-between;
   }
 
   .hero-image-wrapper .front-img {
@@ -386,17 +393,28 @@ header h2 {
     height: 400px;
   }
 
-  .content-wrapper nav {
-    font-size: 14px;
-    margin-bottom: 3em;
+  header {
+    width: 100%;
   }
 
   header h2 {
-    font-size: 2.5em;
+    font-size: 2em;
   }
 
   header h1 {
-    font-size: 4em;
+    font-size: 3em;
+  }
+
+  .about-wrapper {
+    width: 100%;
+  }
+
+  .about-wrapper p {
+    font-size: 14px;
+  }
+
+  .about-wrapper h3 {
+    font-size: 1.5em;
   }
 
   .form-wrapper input {
@@ -425,7 +443,7 @@ header h2 {
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
   form {
     width: 100%;
   }
