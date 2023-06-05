@@ -1,5 +1,7 @@
 //black wrappers sliding
 
+import { securityToken } from "./config.js";
+
 gsap.from(".hero-image-wrapper, .content-wrapper, .front-img", {
   duration: 2,
   delay: 0.2,
@@ -31,3 +33,23 @@ gsap.to("header h1, header h2", 1, {
     amount: 1,
   },
 });
+
+// contact form post email
+/*const btn = document.querySelector("button");
+console.log(btn);
+btn.addEventListener("click", sendEmail);
+
+function sendEmail(e) {
+  e.preventDefault();
+  let email = document.getElementById("email");
+  let message = document.getElementById("message");
+  let body = "Envoyé par: " + email + "<br />" + message;
+
+  Email.send({
+    SecureToken: securityToken,
+    To: "romainnavoret@gmail.com",
+    From: "romainnavoret@gmail.com",
+    Subject: "Contact from portfolio ",
+    Body: body,
+  }).then((message) => alert(message));
+}*/

@@ -33,11 +33,28 @@
           <h1 class="h1">write a message</h1>
           <div class="header-revealer"></div>
           <div class="form-wrapper">
-            <form action="">
-              <input type="email" placeholder="your email" maxlength="50" />
+            <form
+              action="https://formsubmit.co/romainnavoret@gmail.com"
+              method="POST"
+            >
+              <input
+                id="email-address"
+                type="email"
+                name="email "
+                placeholder="your email"
+                autocomplete="off"
+                maxlength="50"
+                required
+              />
 
               <button>Send</button>
-              <textarea placeholder="your message" maxlength="500"></textarea>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="your message"
+                maxlength="500"
+                required
+              ></textarea>
             </form>
             <p>
               Interested in my profile, my work or else? Leave me a message,
@@ -50,5 +67,6 @@
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-  <script src="./scripts/script_contact.js"></script>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script type="module" src="./scripts/script_contact.js"></script>
 </html>
